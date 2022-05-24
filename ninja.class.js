@@ -23,6 +23,20 @@ class Ninja {
     }
 }
 
+class Sensei extends Ninja {
+    constructor(uname) {
+        super(uname)
+        this.health = 200
+        this.speed = 10
+        this.strength = 10
+        this.wisdowm = 10
+    }
+    speakWisdom(){
+        console.log(`${this.uname}'s words of wisdom are: One must drink sake to become sake.`);
+        this.drinkSake()
+        return this
+    }
+}
 
 const myNinja = new Ninja('Stealth', 10);
 
@@ -31,3 +45,8 @@ myNinja.showStats();
 
 console.log('Stats after drinking Sake...')
 myNinja.drinkSake().showStats();
+
+// User super() to inherit into subclass
+mySensei = new Sensei("Master Splinter");
+mySensei.showStats();
+mySensei.speakWisdom().showStats();
